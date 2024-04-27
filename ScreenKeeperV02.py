@@ -1,8 +1,8 @@
-import pyautogui
 import time
 import threading
 from tkinter import Tk, Button, Label, StringVar
 from datetime import datetime
+import keyboard
 
 
 class App:
@@ -52,9 +52,8 @@ class App:
     def keep_screen_active(self):
         while self.running:
             time.sleep(60)  # wait 60 seconds
-            pyautogui.move(1, 0)
-            time.sleep(1)
-            pyautogui.move(-1, 0)
+            keyboard.press_and_release('F15')
+
 
     def update_clock(self):
         while self.running:
